@@ -1,4 +1,3 @@
-
 public class Motorcycle extends Vehicle implements Maintenance {
     private int engineCC;
     private boolean hasSidecar;
@@ -31,4 +30,11 @@ public class Motorcycle extends Vehicle implements Maintenance {
     @Override public double getMPG() {
         return 50;
     }
+    @Override
+    public String toCsv() {
+        return "Motorcycle," + getMake() + "," + getTopSpeed()
+                + "," + getFuel() + "," + engineCC
+                + "," + hasSidecar;
+    }
+
 }

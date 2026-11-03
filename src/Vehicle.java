@@ -42,14 +42,7 @@ public abstract class Vehicle {
     public double getFuel() {
         return fuel;
     }
-    public void addMiles(double distance) {if (distance > 0) {miles += distance;
-        }
-    }
-    public void setFuel(double fuel) {
-        if (fuel >= 0) {
-            this.fuel = fuel;
-        }
-    }
     public abstract String reFuel();
     public abstract String describe();
+    public abstract String toCsv();
 }

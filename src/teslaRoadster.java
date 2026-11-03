@@ -1,4 +1,3 @@
-
 public class teslaRoadster extends Car {
     private int batteryRange;
     public teslaRoadster(int topSpeed, double fuel,
@@ -15,5 +14,11 @@ public class teslaRoadster extends Car {
     }
     @Override public double getMPG() {
         return 100;
+    }
+    @Override
+    public String toCsv() {
+        return "teslaRoadster," + getMake() + "," + getTopSpeed()
+                + "," + getFuel() + "," + getPassengerCapacity()
+                + "," + batteryRange;
     }
 }

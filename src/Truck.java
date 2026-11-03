@@ -1,4 +1,3 @@
-
 public class Truck extends Vehicle implements Maintenance{
     private double cargoCapacity;
     private double cargoWeight;
@@ -30,6 +29,11 @@ public class Truck extends Vehicle implements Maintenance{
     }
     @Override public double getMPG() {
         return 15;
+    }
+    @Override
+    public String toCsv() {
+        return "Truck," + getMake() + "," + getTopSpeed()
+                + "," + getFuel() + "," + cargoCapacity;
     }
 
 }

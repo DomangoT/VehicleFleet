@@ -1,4 +1,3 @@
-
 public class raceCar extends Vehicle {
     private int horsepower;
     private boolean turboEnabled;
@@ -25,5 +24,10 @@ public class raceCar extends Vehicle {
     }
     @Override public double getMPG() {
         return 10;
+    }
+    @Override
+    public String toCsv() {
+        return "raceCar," + getMake() + "," + getTopSpeed()
+                + "," + getFuel() + "," + horsepower;
     }
 }

@@ -1,4 +1,5 @@
-
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
@@ -60,5 +61,26 @@ public class Main {
         System.out.println("Total fuel/energy units: " + totalFuel);
         System.out.println("Average top speed: "
                 + (totalSpeed / fleet.size()) + " MPH");
+        System.out.println("=== SAVING FLEET ===");
+        System.out.println("Working directory: "
+                + System.getProperty("user.dir"));
+
+        saveFleet(fleet);
+
     }
+
+    public static void saveFleet(ArrayList<Vehicle> fleet) {
+        try (FileWriter writer = new FileWriter("fleet.csv")) {
+
+            for (Vehicle v : fleet) {
+                writer.write(v.toCsv() + "\n");
+            }
+
+            System.out.println("Fleet saved successfully!");
+
+        } catch (IOException e) {
+            System.out.println("Error saving fleet: " + e.getMessage());
+        }
+    }
+
 }
